@@ -2,7 +2,7 @@ B#include <stdio.h>
 /**
  * main - display a string
  *
- * Return - take an array from char
+ * Return: take an array from char
  */
 
 int main(void)
