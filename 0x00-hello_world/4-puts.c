@@ -8,7 +8,7 @@
 int main(void)
 {
 char rom[51];
-puts("\"Programming is like building a multilingual puzzle\n");
+puts("\"Programming is like building a multilingual puzzle");
 puts(rom);
 return (0);
 }
