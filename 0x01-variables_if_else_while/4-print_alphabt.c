@@ -1,4 +1,4 @@
-B#include <stdio.h>
+#include <stdio.h>
 /**
 * main - Print all the letters except q and e.
 *
