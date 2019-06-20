@@ -1,4 +1,4 @@
-#include <stdio.h>
+B#include <stdio.h>
 /**
 * main - Print all the letters except q and e.
 *
@@ -15,9 +15,8 @@ a++;
 continue;
 }
 putchar(a);
- a++;
-}
-while (a <= 'z');
+a++;
+} while (a <= 'z');
 putchar('\n');
 return (0);
 }
