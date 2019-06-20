@@ -15,9 +15,9 @@ a++;
 continue;
 }
 putchar(a);
-a++;
+ a++;
 }
-while (a < 'z');
+while (a <= 'z');
 putchar('\n');
 return (0);
 }
