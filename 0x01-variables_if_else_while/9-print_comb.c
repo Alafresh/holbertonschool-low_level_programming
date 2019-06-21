@@ -12,7 +12,7 @@ for (a = 0; a <= 9 ; a++)
 {
 b = a + '0';
 putchar(b);
- if (b <= '8')
+if (b <= '8')
 {
 putchar(',');
 putchar(' ');
