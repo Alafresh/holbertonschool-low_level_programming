@@ -1,5 +1,10 @@
-#include <stdio.h>
 #include "holberton.h"
+
+/**
+* _islower - check for lowercase character..
+* @c: is the value to compared with the alphabet
+* Return: 1 if the stament is true or 0 if is false.
+*/
 
 int _islower(int c)
 {
