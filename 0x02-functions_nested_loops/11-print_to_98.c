@@ -1,40 +1,36 @@
 #include "holberton.h"
 #include <stdio.h>
+/**
+* print_to_98 - print unti 98.
+* @n: is a variable.
+* Return: Always 0.
+*/
+
 void print_to_98(int n)
 {
-	if(n == 0)
+	int a;
+
+	if (n < 98)
 	{
-		for(n = 0; n < 99; n++)
-		{	
-			printf("%d, ", n);
-		}
-		printf("\n");
-	}
-	if(n == 98)
-	{
-		printf("%d \n", n);
-	}
-	if (n == 111)
-	{
-		for(n = 111; n > 99; n--)
+		for (a = n; a <= 98; a++)
 		{
-			printf("%d, ", n);
-		}	
-		printf("\n");
-	}
-	if(n == 81)
-	{
-		for(n = 81; n < 99; n++)
-		{
-			printf("%d, ", n);
-		}
-		printf("\n");
-	}
-	if(n == -10)
-	{
-		for(n = -10; n < 99; n++)
-		{
-			printf("%d, ", n);
+			printf("%d", a);
+			if (a != 98)
+			{
+				printf(", ");
+			}
 		}
 	}
+	else
+	{
+		for (a = n; a >= 98; a--)
+		{
+			printf("%d", a);
+			if (a != 98)
+			{
+				printf(", ");
+			}
+		}
+	}
+	printf("\n");
 }
