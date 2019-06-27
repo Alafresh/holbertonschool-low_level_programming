@@ -36,6 +36,6 @@ int main(void)
 		}
 		printf("%d ", a);
 		a++;
-	}	while (a <= 101);
+	}	while (a <= 100);
 	return (0);
 }
