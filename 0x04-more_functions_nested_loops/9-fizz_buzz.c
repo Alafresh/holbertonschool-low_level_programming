@@ -15,6 +15,7 @@ int main(void)
 		if (a == 100)
 		{
 			printf("Buzz\n");
+			break;
 		}
 		if (a % 3 == 0 && a % 5 == 0)
 		{
