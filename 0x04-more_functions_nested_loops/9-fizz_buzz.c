@@ -29,11 +29,10 @@ int main(void)
 		}
 		if (a == 100)
 		{
-			break;
+			printf("Buzz\n");
 		}
 		printf("%d ", a);
 		a++;
-	}	while (a <= 99);
-	printf("\n");
+	}	while (a <= 100);
 	return (0);
 }
