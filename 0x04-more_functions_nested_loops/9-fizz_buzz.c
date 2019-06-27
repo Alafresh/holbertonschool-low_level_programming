@@ -12,27 +12,30 @@ int main(void)
 
 	a = 1;
 	do {
+		if (a == 100)
+		{
+			printf("Buzz\n");
+		}
 		if (a % 3 == 0 && a % 5 == 0)
 		{
-			a++;
 			printf("FizzBuzz ");
+			a++;
+			continue;
 		}
 		else if (a % 5 == 0)
 		{
-			a++;
 			printf("Buzz ");
+			a++;
+			continue;
 		}
 		else if (a % 3 == 0)
 		{
 			a++;
 			printf("Fizz ");
-		}
-		if (a == 100)
-		{
-			printf("Buzz\n");
+			continue;
 		}
 		printf("%d ", a);
 		a++;
-	}	while (a <= 100);
+	}	while (a <= 101);
 	return (0);
 }
