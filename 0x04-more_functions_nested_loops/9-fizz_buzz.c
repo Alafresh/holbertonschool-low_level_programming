@@ -27,7 +27,7 @@ int main(void)
 			a++;
 			printf("Fizz ");
 		}
-		if (a == 101)
+		if (a == 100)
 		{
 			break;
 		}
