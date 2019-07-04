@@ -16,13 +16,12 @@ void puts_half(char *str)
 	i++;
 	}
 	tmp = i;
-	if (tmp % 2 == 0)
-		i = i / 2;
-	else
+	i = i / 2;
+	if (*(str + tmp) % 2 != 0)
 		i = (i - 1) / 2;
 	while (*(str + a) != '\0')
 	{
-		if (*(str + a) >= *(str + i))
+		if (a >= i)
 			_putchar(*(str + a));
 	a++;
 	}
