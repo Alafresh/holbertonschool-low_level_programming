@@ -15,11 +15,11 @@ void puts_half(char *str)
 		i++;
 	}
 	tmp = i;
-	i = i / 2;
 	if (tmp % 2 != 0)
 	{
 		i++;
 	}
+	i = i /2;
 	a = 0;
 	while (*(str + a) != '\0')
 	{
