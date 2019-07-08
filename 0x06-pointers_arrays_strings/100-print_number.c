@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
-* print_number
-*
+* print_number - prints an integer
+* @n: variable
 */
 
 void print_number(int n)
