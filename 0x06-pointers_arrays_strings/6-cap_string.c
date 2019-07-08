@@ -18,7 +18,7 @@ char *cap_string(char *cap)
 				cap[i] = cap[i] - 32;
 			}
 		}
-		if (cap[i] == '\t' || cap[i] == '.' ||
+		if (cap[i] == '\t' || cap[i] == '.' || cap[i] == ' ' ||
 		cap[i] == ')' || cap[i] == '\n' || cap[i] == '(' ||
 		cap[i] == '{' || cap[i] == '}' || cap[i] == '"' ||
 		cap[i] == ';' || cap[i] == '?' || cap[i] == '!' ||
