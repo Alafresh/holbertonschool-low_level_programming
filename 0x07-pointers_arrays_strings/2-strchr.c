@@ -13,12 +13,12 @@ char *_strchr(char *s, char c)
 	{
 		if (!s++)
 		{
-			return (0);
+			return (s);
 		}
 	}
 	if (!s++)
 	{
-		return (0);
+		return (s);
 	}
 return (s - 1);
 }
