@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 #include <stdlib.h>
 
 /**
@@ -10,20 +11,21 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
-	unsigned int sum;
+	int i, j = 0;
+	int sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] >= 48 && *argv[i] <= 57)
+		while(argv[i][j])
 		{
-			sum += atoi(argv[i]);
+			if (isdigit(argv[i][j]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		sum += atoi(argv[i]); 
 	}
 	printf("%d\n", sum);
 	return (0);
