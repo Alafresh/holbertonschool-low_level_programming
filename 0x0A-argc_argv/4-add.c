@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	long long int sum;
+	unsigned int sum;
 
 	for (i = 1; i < argc; i++)
 	{
@@ -25,6 +25,6 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
-	printf("%llu\n", sum);
+	printf("%d\n", sum);
 	return (sum);
 }
