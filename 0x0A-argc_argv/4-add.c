@@ -23,11 +23,6 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (1);
 			}
-			if (argv[i][j] < 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
 			j++;
 		}
 		sum += atoi(argv[i]);
