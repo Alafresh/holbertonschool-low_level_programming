@@ -10,7 +10,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i;
+	long int sum;
 
 	for (i = 1; i < argc; i++)
 		{
@@ -24,6 +25,6 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
-	printf("%d\n", sum);
+	printf("%lu\n", sum);
 	return (sum);
 }
