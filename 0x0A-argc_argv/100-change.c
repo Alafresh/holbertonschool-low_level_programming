@@ -18,8 +18,6 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	dinerito = atoi(argv[1]);
-	if (dinerito < 0)
-		printf("0\n");
 	for (i = 0; dinerito > 0; i++)
 		if (dinerito >= coins[0])
 		{
@@ -47,4 +45,5 @@ int main(int argc, char *argv[])
 			tmp++;
 		}
 	printf("%d\n", tmp);
+return (0);
 }
