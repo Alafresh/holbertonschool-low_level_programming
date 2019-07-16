@@ -34,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 	i = _length(s1) + _length(s2);
-	phrase = malloc(i * sizeof(char) + 2);
+	phrase = malloc(i * sizeof(char) + 1);
 
 	concat = phrase;
 	while (*s1)
