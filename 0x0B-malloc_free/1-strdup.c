@@ -20,12 +20,14 @@ char *_strdup(char *str)
 	if (str == NULL || ptr == NULL)
 		return (NULL);
 	dup = ptr;
+	if (dup == NULL)
+		return (NULL);
 	while (*str)
 	{
 		*dup = *str;
 		dup++;
 		str++;
 	}
-	dup[i + 1] = '\0';
+	*dup = '\0';
 	return (ptr);
 }
