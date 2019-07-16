@@ -20,6 +20,8 @@ char *_strdup(char *str)
 	if (str == NULL || ptr == NULL)
 		return (NULL);
 	dup = ptr;
+	if (ptr == NULL)
+		return (NULL);
 		while (*str)
 		{
 			*dup = *str;
