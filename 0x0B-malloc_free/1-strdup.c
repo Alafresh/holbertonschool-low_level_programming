@@ -16,18 +16,21 @@ char *_strdup(char *str)
 
 	while (str[i] != '\0')
 		i++;
-	ptr = malloc(i * sizeof(char) + 1);
+	ptr = (char *) malloc(i * sizeof(char) + 1);
 	if (str == NULL || ptr == NULL)
 		return (NULL);
 	dup = ptr;
-	if (dup == NULL)
-		return (NULL);
-	while (*str)
+	if (i > 0)
 	{
-		*dup = *str;
-		dup++;
-		str++;
+		while (*str)
+		{
+			*dup = *str;
+			dup++;
+			str++;
+		}
+		*dup = '\0';
 	}
-	*dup = '\0';
-	return (ptr);
+	else
+	*ptr = 0;
+		return (ptr);
 }
