@@ -52,9 +52,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	while (j < n)
 	{
-		ptr[i + j] += s2[j];
+		ptr[i + j] = s2[j];
 		j++;
 	}
-	ptr[i + n] = '\0';
+	ptr[i + j] = '\0';
 return (ptr);
 }
