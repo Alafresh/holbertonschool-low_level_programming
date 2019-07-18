@@ -30,8 +30,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *ptr, *concat;
 	int i, a, c = 0;
 
-	a = _lenght(s2);
-	i = _lenght(s1) + _lenght(s2);
+	a = _length(s2);
+	i = _length(s1) + _length(s2);
 	ptr = malloc(i * sizeof(char) + 1);
 	concat = ptr;
 	if (ptr == NULL)
@@ -48,12 +48,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	if ((int)n >= a)
+	{	
 		while (*s2)
 		{
 			*concat += *s2;
 			concat++;
 			s2++;
 		}
+	}
 	while (c < (int)n)
 	{
 		*concat += *s2;
@@ -61,5 +63,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2++;
 		c++;
 	}
+	concat = '\0';
 return (ptr);
 }
