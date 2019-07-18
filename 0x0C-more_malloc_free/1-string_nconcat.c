@@ -48,13 +48,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	if ((int)n >= a)
-	{	
-		while (*s2)
-		{
-			*concat += *s2;
-			concat++;
-			s2++;
-		}
+	{
+		n = a;
 	}
 	while (c < (int)n)
 	{
