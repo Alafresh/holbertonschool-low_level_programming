@@ -28,32 +28,29 @@ int _length(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr, *concat;
-	int i, c = 0;
+	unsigned int c = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 	{
 		s2 = "";
-		n = 0;
 	}
-	i = _length(s1) + _length(s2);
-	ptr = malloc(i + 1);
+	if (n >= (unsigned int)_length(s2))
+	{
+		n = _length(s2);
+	}
+	ptr = malloc((_length(s1) + n + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	concat = ptr;
 	while (*s1)
 	{
 		*concat = *s1;
-		s1++;
 		concat++;
+		s1++;
 	}
-
-	if ((int)n >= _length(s2))
-	{
-		n = _length(s2);
-	}
-	while (c < (int)n)
+	while (c < n)
 	{
 		*concat += *s2;
 		concat++;
