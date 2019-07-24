@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "3-calc.h"
 #include <string.h>
+#include <stdlib.h>
 
 /**
 * get_op_func - function evaluate a operator
@@ -28,5 +29,6 @@ int (*get_op_func(char *s))(int, int)
 		}
 		i++;
 	}
-return (NULL);
+	printf("Error");
+	exit(99);
 }
