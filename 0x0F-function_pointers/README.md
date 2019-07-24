@@ -6,6 +6,7 @@ this project is about:
   - Where does a function pointer point to in the virtual memory
 
 > Pointers, Pointers Everywhere
+>
 > 0-print_name.c "A function that prints a name".
 >
 > 1-array_iterator.c "A function that executes a function given as a parameter on each element of an array"
