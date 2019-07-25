@@ -25,13 +25,13 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	if (strcmp(argv[2], "+") != 0 && strcmp(argv[2], "-")
+	/*if (strcmp(argv[2], "+") != 0 && strcmp(argv[2], "-")
 	!= 0 && strcmp(argv[2], "/") != 0 && strcmp(argv[2], "*")
 	!= 0 && strcmp(argv[2], "%"))
 	{
 		printf("Error\n");
 		exit(99);
-	}
+	}*/
 	printf("%d\n", (get_op_func(argv[2])(a, b)));
 return (0);
 }
