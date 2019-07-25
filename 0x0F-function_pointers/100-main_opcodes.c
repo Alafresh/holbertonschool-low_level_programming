@@ -10,15 +10,15 @@
 
 int main(int argc, char *argv[])
 {
-	if (atoi(argv[1]) < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
+	}
+	if (argv[1] < 0)
+	{
+		printf("Error\n");
+		exit(2);
 	}
 return (0);
 }
