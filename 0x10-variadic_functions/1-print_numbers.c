@@ -23,7 +23,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			separator = "";
 		}
-		if (i + 1 == n)
+		if ((i + 1) == n)
 		{
 			printf("%d\n", a);
 			break;
@@ -32,3 +32,4 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	va_end(pri);
 }
+
