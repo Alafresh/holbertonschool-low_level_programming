@@ -1,4 +1,4 @@
-#README 
+# README 
 #### General!
 this project is about:
   - When and why using linked lists vs arrays
