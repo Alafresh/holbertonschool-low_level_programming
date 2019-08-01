@@ -1,10 +1,10 @@
-EADME 
+#README 
 #### General!
 this project is about:
   - When and why using linked lists vs arrays
   - How to build and use linked lists
 
-> #Free list!
+> Free list!
 >
 > 0-print_list.c "Function that prints all the elements of a list_t list, return the number of nodes."
 >
