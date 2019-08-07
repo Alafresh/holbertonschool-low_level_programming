@@ -1,4 +1,7 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
 * free_listint2 - function that frees a list.
