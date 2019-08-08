@@ -21,8 +21,10 @@ void printaux(unsigned long int n)
 
 void print_binary(unsigned long int n)
 {
-	if (n >= 1)
-		printaux(n);
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}
+	printaux(n);
 }
