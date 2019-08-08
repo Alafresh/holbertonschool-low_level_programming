@@ -9,10 +9,10 @@ void printaux(unsigned long int n)
 {
 	if (n == 0)
 		return;
-	printaux(n >> 1);
+	if (n > 1)
+		printaux(n >> 1);
 	_putchar('0' + (n & 1));
 }
-
 /**
 * print_binary - function that prints the binary representation
 * @n: binary number
