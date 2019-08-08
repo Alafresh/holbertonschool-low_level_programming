@@ -9,8 +9,7 @@ void printaux(unsigned long int n)
 {
 	if (n == 0)
 		return;
-	if (n > 1)
-		printaux(n >> 1);
+	printaux(n >> 1);
 	_putchar('0' + (n & 1));
 }
 
