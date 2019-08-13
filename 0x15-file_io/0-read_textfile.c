@@ -18,18 +18,23 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buf = malloc(sizeof(letters));
 	if (buf == NULL)
 	{
-		free(buf);
 		return (0);
 	}
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
+		free(buf);
 		return (0);
+	}
 	red = read(fd, buf, letters);
 	close(fd);
 	fd = open(filename, O_WRONLY);
 	if (fd == -1)
+	{
+		free(buf);
 		return (0);
-	wri = write(1, buf, red);
+	}
+	wri = write(STDOUT_FILENO, buf, red);
 	if (wri != red)
 		return (0);
 	close(fd);
