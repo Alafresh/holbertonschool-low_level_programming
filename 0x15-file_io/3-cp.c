@@ -1,16 +1,12 @@
 #include "holberton.h"
 /**
 * err97 - exit with code 97
-* @a: is the argc
 */
 
-void err97(int a)
+void err97(void)
 {
-	if (a != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+	exit(97);
 }
 
 /**
@@ -20,12 +16,29 @@ void err97(int a)
 
 void err98(char *ptr)
 {
-	if (ptr == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", ptr);
-;
-		exit(98);
-	}
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", ptr);
+	exit(98);
+}
+
+/**
+* err99 - exit with code 99
+* @ptr: pointer
+*/
+
+void err99(char *ptr)
+{
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ptr);
+	exit(99);
+}
+
+/**
+* err100 - exit with code 100
+* @a: variable
+*/
+void err100(int a)
+{
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", a);
+	exit(100);
 }
 
 /**
@@ -40,38 +53,25 @@ int main(int argc, char *argv[])
 	ssize_t numRead;
 	char buf[1024];
 
-	err97(argc);
-	err98(argv[1]);
+	if (argc != 3)
+		err97();
+	if (argv[1] == NULL)
+		err98(argv[1]);
 	inputFd = open(argv[1], O_RDONLY);
 	if (inputFd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
-		exit(98);
-	}
+		err98(argv[1]);
 	outputFd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (outputFd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+		err99(argv[2]);
 	numRead = read(inputFd, buf, 1024);
 	if (numRead == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
-		exit(98);
-	}
+		err98(argv[1]);
 	write(outputFd, buf, numRead);
 	cloIn = close(inputFd);
 	if (cloIn == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", inputFd);
-		exit(100);
-	}
+		err100(inputFd);
 	cloOu = close(outputFd);
 	if (cloOu == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", outputFd);
-		exit(100);
-	}
+		err100(outputFd);
 return (0);
 }
