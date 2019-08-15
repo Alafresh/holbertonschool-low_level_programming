@@ -64,13 +64,13 @@ int main(int argc, char *argv[])
 	cloIn = close(inputFd);
 	if (cloIn == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cloIn);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", inputFd);
 		exit(100);
 	}
 	cloOu = close(outputFd);
 	if (cloOu == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cloOu);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", outputFd);
 		exit(100);
 	}
 return (0);
