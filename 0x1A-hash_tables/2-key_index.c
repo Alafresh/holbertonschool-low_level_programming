@@ -14,7 +14,7 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 
 	while (key && key[i])
 	{
-		hash = (hash + key[i]) % size;
+		hash = hash % size;
 		i++;
 	}
 	return (hash);
