@@ -1,5 +1,26 @@
 #include "hash_tables.h"
+hash_node_t *add_node(hash_node_t **head, const char *str, const char
+*key)
+{
+	hash_node_t *item;
 
+	if (head == NULL)
+	{
+		return (NULL);
+	}
+
+	item = *head;
+	item = malloc(sizeof(hash_node_t));
+	if (item == NULL)
+	{
+		return (NULL);
+	}
+	item->value = strdup(str);
+	item->key = strdup(key);
+	item->next = *head;
+	*head = item;
+	return (item);
+}
 /**
 * hash_table_set - function that adds an element
 * @ht: hash table
@@ -10,7 +31,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *current, *item;
+	hash_node_t *current;
 	int index, flag;
 
 	if (ht == NULL || key == NULL || value == NULL || strcmp(key, "") == 0)
@@ -19,13 +40,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	current = ht->array[index];
 	if (!current)
 	{
-		item = malloc(sizeof(hash_node_t));
-		if (item == NULL)
+		add_node(&(ht->array[index]), value, key);
+		if (ht->array[index] == NULL)
 			return (0);
-		item->key = strdup(key);
-		item->value = strdup(value);
-		item->next = NULL;
-		ht->array[index] = item;
 	}
 	else
 	{
@@ -41,13 +58,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		if (flag == 0)
 		{
-			item = malloc(sizeof(hash_node_t));
-			if (item == NULL)
+			add_node(&(ht->array[index]), value, key);
+			if (ht->array[index] == NULL)
 				return (0);
-			item->key = strdup(key);
-			item->value = strdup(value);
-			item->next = ht->array[index];
-			ht->array[index] = item;
 		}
 	} return (1);
 }
