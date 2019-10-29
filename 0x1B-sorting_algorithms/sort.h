@@ -29,5 +29,6 @@ int lomuto(int *array, int low, int high);
 void quick_sort(int *array, size_t size);
 size_t dlistint_len(const listint_t *h);
 listint_t *get_dnodeint_at_index(listint_t *head, unsigned int index);
+void selection_sort(int *array, size_t size);
 
 #endif
