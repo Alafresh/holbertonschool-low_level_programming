@@ -71,6 +71,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *left, *right;
 	unsigned int length, i, j;
 
+	if (list == NULL)
+		return;
 	if (!(*list))
 		return;
 	length = dlistint_len((*list));
