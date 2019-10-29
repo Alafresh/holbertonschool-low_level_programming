@@ -2,37 +2,39 @@
 
 int lomuto(int *array, int low, int high)
 {
-	int pivot, i, j, tmp;
+	int pivot, i, j;
 	i = low;
-	tmp = 0;
 	pivot = array[high];
 	for (j = low; j < high - 1; j++)
 	{
-		if (array[j] <= pivot)
+		if (array[j] < pivot)
 		{
+			swap_int(&array[i], &array[j]);
+			print_array(array, high + 1);
 			i++;
-			tmp = array[i];
-			array[i] = array[j];
-			array[j] = tmp;
 		}
 	}
-	tmp = array[i + 1];
-	array[i + 1] = array[high];
-	array[low] = tmp;
-	return i + 1;
+	swap_int(&array[i], &array[high]);
+		print_array(array, high + 1);
+	return i;
+}
+
+void quickSort(int *array, int l, int h)
+{
+	int pi;
+	if (l < h)
+	{
+		pi = lomuto(array, l, h);
+		quickSort(array, l, pi - 1);
+		quickSort(array, pi + 1, h);
+	}
 }
 
 void quick_sort(int *array, size_t size)
 {
-	int pi;
 	int low, high;
-	high = size;
-	low = 0;
 
-	if (low < high)
-	{
-		pi = lomuto(array, low, high);
-		quick_sort(array, pi - 1);
-		quick_sort(array,pi + 1);
-	}
+	high = size - 1;
+	low = 0;
+	quickSort(array, low, high);
 }
