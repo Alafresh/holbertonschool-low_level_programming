@@ -31,6 +31,10 @@ void counting_sort(int *array, size_t size)
 {
 	int i, j, max, *c;
 
+	if (size < 2)
+		return;
+	if (array == NULL)
+		return;
 	max = find_max(array, size);
 	c = malloc(sizeof(int) * (max + 1));
 
