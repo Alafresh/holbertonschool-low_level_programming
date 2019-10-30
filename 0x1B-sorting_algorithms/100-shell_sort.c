@@ -7,22 +7,23 @@
 
 void shell_sort(int *array, size_t size)
 {
-	unsigned int knuth, i, j, arrays;
+	unsigned int knuth, i, j;
+	int arrays;
 
 	knuth = 1;
 	while (knuth < size / 3)
-		knuth = 3 * knuth + 1;
+		knuth = knuth * 3 + 1;
 
 	while (knuth > 0)
 	{
-		for (i = knuth; i < size; i += knuth)
+		for (i = knuth; i < size; i++)
 		{
-			for (j = i; j > 0 && array[j] < array[j - knuth]; j -= knuth)
+			arrays = array[i];
+			for (j = i; j > knuth - 1 && array[j - knuth] >= arrays; j -= knuth)
 			{
-				arrays = array[j];
 				array[j] = array[j - knuth];
-				array[j - knuth] = arrays;
 			}
+			array[j] = arrays;
 		}
 		knuth = (knuth - 1) / 3;
 		print_array(array, size);
