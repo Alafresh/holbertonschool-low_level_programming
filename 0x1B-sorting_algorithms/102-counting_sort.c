@@ -40,7 +40,6 @@ void counting_sort(int *array, size_t size)
 
 	for (i = 0; i < max + 1; i++)
 		c[i] = 0;
-	/* store count of each number */
 	for (i = 0; (unsigned int)i < size; i++)
 		c[array[i]]++;
 	for (i = 1; i <= max; i++)
@@ -52,8 +51,6 @@ void counting_sort(int *array, size_t size)
 		c[array[i]]--;
 	}
 	for (i = 0; array[i]; i++)
-	{
 		array[i] = aux[i];
-	}
 	free(c);
 }
