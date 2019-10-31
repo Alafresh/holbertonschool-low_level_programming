@@ -29,7 +29,7 @@ int find_max(int *array, size_t size)
 
 void counting_sort(int *array, size_t size)
 {
-	int i, j, max, *c;
+	int i, max, *c, aux[size];
 
 	if (size < 2)
 		return;
@@ -40,22 +40,20 @@ void counting_sort(int *array, size_t size)
 
 	for (i = 0; i < max + 1; i++)
 		c[i] = 0;
+	/* store count of each number */
 	for (i = 0; (unsigned int)i < size; i++)
 		c[array[i]]++;
-	i = 0;
-	j = 0;
+	for (i = 1; i <= max; i++)
+		c[i] += c[i - 1];
 	print_array(c, max + 1);
-	while (j < max + 1)
+	for (i = 0; (unsigned int)i < size; i++)
 	{
-		if (c[j] > 0)
-		{
-			array[i++] = j;
-			c[j]--;
-		}
-		else
-		{
-			j++;
-		}
+		aux[c[array[i]] - 1] = array[i];
+		c[array[i]]--;
+	}
+	for (i = 0; array[i]; i++)
+	{
+		array[i] = aux[i];
 	}
 	free(c);
 }
