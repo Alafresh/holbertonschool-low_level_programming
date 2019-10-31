@@ -29,11 +29,14 @@ int find_max(int *array, size_t size)
 
 void counting_sort(int *array, size_t size)
 {
-	int i, max, *c, aux[size];
+	int i, max, *c, *aux;
 
 	if (size < 2)
 		return;
 	if (array == NULL)
+		return;
+	aux = malloc(sizeof(int) * size);
+	if (aux == NULL)
 		return;
 	max = find_max(array, size);
 	c = malloc(sizeof(int) * (max + 1));
@@ -58,4 +61,5 @@ void counting_sort(int *array, size_t size)
 		i++;
 	}
 	free(c);
+	free(aux);
 }
