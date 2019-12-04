@@ -33,6 +33,37 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
+ * binary_tree_balance - Stores recursively
+ * each level in an array of strings
+ *
+ * @tree: Pointer to the node
+ *
+ * Return: newNode inserted
+ */
+
+int binary_tree_balance(const binary_tree_t *tree)
+{
+	int balanceR;
+	int balanceL;
+
+	balanceL = 0;
+	balanceR = 0;
+	if (tree == NULL)
+		return (0);
+	if (tree->left)
+	{
+		balanceL += 1;
+	}
+	if (tree->right)
+	{
+		balanceR += 1;
+	}
+	balanceR += binary_tree_height(tree->right);
+	balanceL += binary_tree_height(tree->left);
+	return (balanceL - balanceR);
+}
+
+/**
  * binary_tree_is_full - Stores recursively
  * each level in an array of strings
  *
@@ -68,7 +99,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	if (binary_tree_is_full(tree) == 1)
+	if (binary_tree_is_full(tree) == 1 && !binary_tree_balance(tree))
 	{
 		if (binary_tree_height(tree->left) == binary_tree_height(tree->right))
 		{
