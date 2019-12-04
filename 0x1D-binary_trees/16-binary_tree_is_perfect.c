@@ -1,46 +1,13 @@
 #include "binary_trees.h"
 #include <stdio.h>
-
-#include "binary_trees.h"
-/**
- * binary_tree_height - Stores recursively
- * each level in an array of strings
- *
- * @tree: Pointer to the node
- *
- * Return: The branch
- */
-
-size_t binary_tree_height(const binary_tree_t *tree)
-{
-	size_t l;
-	size_t r;
-
-	if (tree == NULL)
-		return (0);
-	if (tree->left)
-		l = 1 + binary_tree_height(tree->left);
-	else
-		l = 0;
-	if (tree->right)
-		r = 1 + binary_tree_height(tree->right);
-	else
-		r = 0;
-	if (l > r)
-		return (l);
-	else
-		return (r);
-}
-
 /**
  * binary_tree_balance - Stores recursively
  * each level in an array of strings
  *
  * @tree: Pointer to the node
- *
+  *
  * Return: newNode inserted
  */
-
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	int balanceR;
@@ -62,16 +29,34 @@ int binary_tree_balance(const binary_tree_t *tree)
 	balanceL += binary_tree_height(tree->left);
 	return (balanceL - balanceR);
 }
+/**
+ * binary_tree_height - Stores recursively
+ * each level in an array of strings
+ *
+ * @tree: Pointer to the node
+ *
+ * Return: newNode inserted
+ */
+size_t binary_tree_height(const binary_tree_t *tree)
+{
+	size_t count_left = 0;
+	size_t count_right = 0;
 
+	if (tree == NULL)
+		return (0);
+	count_left = tree->left ? 1 + binary_tree_height(tree->left) : 0;
+	count_right = tree->right ? 1 + binary_tree_height(tree->right) : 0;
+
+	return (count_left > count_right ? count_left : count_right);
+}
 /**
  * binary_tree_is_full - Stores recursively
  * each level in an array of strings
  *
  * @tree: Pointer to the node
- *
- * Return: True or false
+  *
+ * Return: newNode inserted
  */
-
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 
@@ -85,23 +70,22 @@ int binary_tree_is_full(const binary_tree_t *tree)
 	}
 	return (0);
 }
-
 /**
-* binary_tree_is_perfect - Stores recursively
-* each level in an array of strings
-*
-* @tree: Pointer to the node
-*
-* Return: True or false
-*/
-
+ * binary_tree_is_perfect - Stores recursively
+ * each level in an array of strings
+ *
+ * @tree: Pointer to the node
+  *
+ * Return: newNode inserted
+ */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
 	if (binary_tree_is_full(tree) && !binary_tree_balance(tree))
 	{
-		if (binary_tree_height(tree->left) == binary_tree_height(tree->right))
+		if (binary_tree_is_perfect(tree->left) ==
+		binary_tree_is_perfect(tree->right))
 		{
 			return (1);
 		}
