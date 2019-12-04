@@ -1,12 +1,11 @@
 #include "binary_trees.h"
 /**
- * binary_tree_postorder - Stores recursively
+ * binary_tree_height - Stores recursively
  * each level in an array of strings
  *
  * @tree: Pointer to the node
- * @func: function pointer
  *
- * Return: newNode inserted
+ * Return: The branch
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
@@ -25,7 +24,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	else
 		r = 0;
 	if (l > r)
-		return l;
+		return (l);
 	else
-		return r;
+		return (r);
 }
