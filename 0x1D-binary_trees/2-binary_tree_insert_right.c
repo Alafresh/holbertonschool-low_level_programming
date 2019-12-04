@@ -1,6 +1,6 @@
 #include "binary_trees.h"
 /**
- * binary_tree_insert_left - Stores recursively
+ * binary_tree_insert_right - Stores recursively
  * each level in an array of strings
  *
  * @parent: Pointer to the node
