@@ -1,10 +1,9 @@
 #include "binary_trees.h"
 /**
- * binary_tree_postorder - Stores recursively
+ * binary_tree_size - Stores recursively
  * each level in an array of strings
  *
  * @tree: Pointer to the node
- * @func: function pointer
  *
  * Return: newNode inserted
  */
