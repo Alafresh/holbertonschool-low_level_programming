@@ -1,9 +1,5 @@
 # 0x00 C Hello World
 
-Type: Lecture
-Materials: Chapter_1_(1).pdf
-Reviewed: No
-
 # Requerimientos
 
 - `sudo apt-get update`
